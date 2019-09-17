@@ -1,0 +1,16 @@
+﻿@model IEnumerable<App.Models.Product>
+@{
+    ViewData["Title"] = "Shop the Ctrl-Alt-Pc Store";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Please choose a product</h1>
+<ul>
+    @*<li><a asp-controller="Store" asp-action="Details" asp-route-product="Product 1">Product 1</a></li>
+        <li><a asp-controller="Store" asp-action="Details" asp-route-product="Product 1">Product 2</a></li>
+        <li><a asp-controller="Store" asp-action="Details" asp-route-product="Product 1">Product 3</a></li>*@
+    @foreach(var product in Model){
+    <li><a asp-controller="Store" asp-action="Details" asp-route-product="@product.Name">@product.Name</a></li>
+}
+</ul>
+
